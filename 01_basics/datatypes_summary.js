@@ -1,4 +1,4 @@
-// 1. Primitive or Non Reference type
+// 1. Primitive or Non Reference type (Make Copy)
 
 // --> 7 types : String, Number, Boolean, null, undefined, Symbol, BigInt
 
@@ -18,7 +18,7 @@ const anotherId = Symbol('123')
 
 
 
-// 2. Non Primitive or Reference type
+// 2. Non Primitive or Reference type (Change in original)
 
 // --> Array, Objects, Functions
 
@@ -36,6 +36,26 @@ const myFunction = function() {
     console.log("hello world");
 }
 // myFunction()
+// console.log(typeof(myFunction));
+
+//  ***************************************************************
+
+                        // STACK AND HEAP
+
+// Stack (Primitive), Heap (Non-Primitive)
 
 
-console.log(typeof(myFunction));
+let myWebsite = "Anandrajdotcom"
+
+let anotherName = myWebsite
+
+let userOne = {
+    email: "user@google.com",
+    upi : "user@ybl"
+}
+let userTwo = userOne
+
+userTwo.email = "anand@google.com"
+
+console.log(userOne);
+console.log(userTwo);
