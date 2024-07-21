@@ -55,4 +55,49 @@ users[1].email
 // console.log(Object.values(tinderUser));
 // console.log(Object.entries(tinderUser));
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+// console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+
+
+// DE-STRUCTURING
+
+const course = {
+    coursename: "Js in hindi",
+    price: "999",
+    courseInstructor: "hitesh"
+}
+
+// console.log(course.courseInstructor)
+
+const {courseInstructor} = course
+
+console.log(courseInstructor);
+
+// or
+const {courseInstructor: instructor} = course
+
+console.log(instructor);
+
+// React Example
+
+const navbar = ({company}) => {
+
+}
+
+navbar(company = "google")
+
+
+// API'S
+
+// {
+//     "name": "hitesh",
+//     "coursename": "js in hindi",
+//     "price": "free"
+// }
+
+
+// [
+//     {},
+//     {},
+//     {}
+// ]
+
