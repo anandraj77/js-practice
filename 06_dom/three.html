@@ -17,10 +17,20 @@
     addedDiv.setAttribute("title", "generated title")
     addedDiv.style.backgroundColor = "green"
     addedDiv.style.padding = "12px";
+    addedDiv.style.borderRadius = "5px"
+    
     
     const addText = document.createTextNode("Chai aur Code")
     addedDiv.appendChild(addText)
     document.body.appendChild(addedDiv)
+
+
+    const paraTag = document.createElement("p")
+    console.log(paraTag);
+    paraTag.innerHTML = "Hellow"
+    document.body.appendChild(paraTag)
+    paraTag.style.color = "orange"
+    paraTag.style.padding = "12px";
     
 </script>
 
