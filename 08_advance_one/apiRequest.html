@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121; color: #ffffff;">
+    <h1>hello</h1>
+    <button id="button" style="display: block;">Get Random Image</button>
+    <img src="" alt="" style="max-width: 200px;">
+    <p id="userName"></p>
+</body>
+
+<script>
+    const button = document.querySelector('#button')
+    const image = document.querySelector('img')
+    const userName = document.querySelector('#userName')
+    const requestURL = 'https://randomuser.me/api/'
+
+
+    // console.log(xhr)
+    // console.log(JSON.parse(xhr))
+
+    button.addEventListener('click', () => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestURL)
+        xhr.onreadystatechange = function () {
+            console.log(xhr.readyState);
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(this.responseText)
+                console.log(data)
+                console.log(data.results[0].gender)
+                image.src = `${data.results[0].picture.large}`
+                userName.innerHTML = data.results[0].name.first + " " + data.results[0].name.last
+            }
+        }
+        xhr.send()
+    })
+
+
+
+    // button.addEventListener('click', (e) => {
+    //     const xhr = new XMLHttpRequest()
+    //     console.log(xhr)
+
+    //     xhr.responseType = 'json'
+
+    //     // xhr.addEventListener('load', () => {
+    //     //     // console.log(JSON.parse(xhr.response))
+    //     //     image.src = xhr.response.message
+    //     // })
+
+    //     // or
+
+    //     // xhr.onload = () => {
+    //     //     // console.log(JSON.parse(xhr.response))
+    //     //     image.src = xhr.response.message
+    //     // }
+
+    //     xhr.open('GET', 'https://dog.ceo/api/breeds/image/random')
+    //     xhr.send()
+    // })
+
+</script>
+
+</html>
